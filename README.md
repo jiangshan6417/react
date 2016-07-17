@@ -41,9 +41,9 @@
                 </html>
         在注释位置处，写入下面的代码：        
                 var HelloWorld = React.createClass({//创建一个组件类
-                          render: function() {
+                          render: function() {//返回一个React方法组件树，最终渲染成HTML
                             return (
-                              <p>
+                              <p>//不是真正的DOM节点，而是React的实例
                                 Hello, <input type="text" placeholder="Your name here" />!
                                 It is {this.props.date.toTimeString()}
                               </p>
@@ -57,7 +57,7 @@
                             document.getElementById('example')
                           );
                         }, 500);
-        主要功能：1、封装组件的方式，组件可以复用
+        主要功能：1、模块化、可组装的组件，组件可以复用
                   2、行为与形态的分离
         
         
