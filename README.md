@@ -43,7 +43,7 @@
                 var HelloWorld = React.createClass({//创建一个组件类
                           render: function() {//返回一个React方法组件树，最终渲染成HTML
                             return (
-                              <p>//不是真正的DOM节点，而是React的实例
+                              <p>//不是真正的DOM节点，而是React的实例，是一种标签或者是数据，react对其进行处理，避免XSS攻击
                                 Hello, <input type="text" placeholder="Your name here" />!
                                 It is {this.props.date.toTimeString()}
                               </p>
@@ -52,7 +52,7 @@
                         });
                         
                         setInterval(function() {
-                          React.render(//模板语言转换为html
+                          React.render(//实例化根组件
                             <HelloWorld date={new Date()} />,
                             document.getElementById('example')
                           );
