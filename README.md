@@ -21,7 +21,44 @@
         React构建UI是使用组件化的方式，而不是常见的模板。组件并不是一个新概念，它是某个独立功能或者界面的封装，达到复用或者UI
         和业务松耦合的目的。
 ##三、学习内容
-        1、
+        1、基本数据展示，可以下载React官网上入门压缩包
+        新建一个HTML页面：
+        <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Hello React</title>
+                    <script src="http://fb.me/react-0.14.7.js"></script>  //引入react核心库
+                    <script src="http://fb.me/JSXTransformer-0.14.7.js"></script> //引入将jsx文件转换为Js文件的包
+                  </head>
+                  <body>
+                    <div id="example"></div>
+                    <script type="text/jsx">//React独有的jsx语法，与JavaScript不兼容
+                
+                      // ** 在这里替换成你的代码 **
+                
+                    </script>
+                  </body>
+                </html>
+        在注释位置处，写入下面的代码：        
+                var HelloWorld = React.createClass({//创建一个组件类
+                          render: function() {
+                            return (
+                              <p>
+                                Hello, <input type="text" placeholder="Your name here" />!
+                                It is {this.props.date.toTimeString()}
+                              </p>
+                            );
+                          }
+                        });
+                        
+                        setInterval(function() {
+                          React.render(//模板语言转换为html
+                            <HelloWorld date={new Date()} />,
+                            document.getElementById('example')
+                          );
+                        }, 500);
+        主要功能：1、封装组件的方式，组件可以复用
+                  2、行为与形态的分离
         
         
         
